@@ -120,3 +120,10 @@ let sum = numbers.reduce((acc, curr)=>{
 },0)
 
 console.log(sum); 
+
+let numbers2 = [1, 2, 5, 6, 10];
+let suma = numbers2.reduce((acc, curr)=>{
+    return acc + curr;
+},0);
+
+console.log(suma);

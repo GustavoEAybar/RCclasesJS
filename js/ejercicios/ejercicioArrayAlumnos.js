@@ -23,7 +23,7 @@ Antonio es descalificado y se elimina del concurso
 Detrás de Ana y antes de Oswaldo se clasifican dos nuevos concursantes: Roberto y Amaya, en ese orden
 Hay una nueva participante que pasa a encabezar la clasificación: Marta
 Imprime la clasificación actualizada y comprueba que se ha hecho correctamente
-*/
+
 
 let clasificaciones = ['Ana', 'Oswaldo', 'Raúl', 'Celia', 'María', 'Antonio'];
 console.log(clasificaciones);
@@ -45,3 +45,67 @@ const eliminarConcursantes = (arr, personaBuscada) => {
 }
 
 console.log(eliminarConcursantes(clasificaciones, 'Ana'));
+*/
+
+/*
+//usando reduce generar un array con elementos unicos
+let array = [18, 8, 9, 18, 18, 3, '4'];
+console.log('hola',...array,'chau');
+
+console.log(array.includes());
+
+// let uniqueArray = array.reduce((unique, item)=>unique.includes(item) ? unique : [...unique, item],[]);
+// console.log(uniqueArray);
+
+let uniqueArray = array.reduce((unique, item)=>!(unique.includes(item)) ? [...unique, item] : unique,[]);
+console.log(uniqueArray);
+
+// let uniqueArray = array.reduce((unique, item)=>{
+//     if(!unique.includes(item)){
+//        return [...unique, item];
+//     }else{
+//         return unique;
+//     }
+// },[]);
+// console.log(uniqueArray);
+
+//ejemplo 3 generar una funcion que iterando una sola vez un array elmine todos los elementos undefined, false, 0, null, '', y devuleva sin ellos;
+const clean = (arra) => {
+    return arra.reduce((acc,val)=>{
+        if(val){
+            acc.push(val);
+        }
+        return acc;
+    },[])
+}
+
+const cleaned=clean([1,undefined,null,0,2,'150','','hola',false,55])
+cleaned;
+
+//generar un array de elementos unicos usando filter e indexOf
+let arreglo = [5,8,8,556,'77','hello','word','hello','🍕', '🍔']
+console.log (arreglo.indexOf('8'));
+
+let elementosUnicos = arreglo.filter((item,index)=>arreglo.indexOf (item)=== index);
+
+console.log(elementosUnicos);
+*/
+//realiza un script que pida numero de filas y columnas y escriba una tabla
+//dentro de cada una de las celdas debera escribirse un numero consecutivo en orden descendente.
+//por ejemplo la tabla 7x5, los numeros iran del 35 a 1.
+
+let fila = parseInt(prompt('Ingrese el numero de filas:'));
+let columna = parseInt(prompt('Ingrese el numero de columnas:'));
+let totalCeldas = fila * columna;
+document.write('<table border>');
+for(let indf=0; indf<fila; indf++){
+    document.write('<tr>');
+    for (let indc=0; indc<columna; indc++){
+        document.write('<td>');
+        document.write(totalCeldas);
+        totalCeldas--;
+        document.write('</td>');
+    }
+    document.write('</tr>');
+}
+document.write('</table>');
